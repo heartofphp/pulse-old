@@ -21,3 +21,18 @@ function objectify(array $array)
     
     return false;
 }
+
+/**
+ * Initialize configuration
+ * Set $config variable globally
+ *
+ * @return array
+ */
+function init_config(): array
+{
+    // Get $config variable from config/config.php file
+    // globally
+    global $config;
+
+    return $config;
+}

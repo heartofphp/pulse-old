@@ -51,3 +51,30 @@ function filter_directory($directory = '')
     unset($files[1]);
     return $files;
 }
+
+/**
+ * Config function to get config values
+ *
+ * @param [type] $key
+ * @param [type] $config
+ * @return void
+ */
+function config($key = null)
+{
+    $object = '';
+    
+    $config = init_config() ?? [];
+
+    $object = objectify($config);
+
+    if ($key === null) {
+        return $object;
+    }
+
+    if (! $object->$key) {
+        throw new Exception("Object key does not exist");
+    }
+
+    return $object->$key;
+
+}

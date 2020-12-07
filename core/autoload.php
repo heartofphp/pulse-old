@@ -78,3 +78,10 @@ function config($key = null)
     return $object->$key;
 
 }
+
+// Get and load all available core files
+$core_path = config('core_path');
+$core = filter_directory($core_path);
+foreach ($core as $file) {
+    require_once($core_path . DIRECTORY_SEPARATOR . $file);
+}

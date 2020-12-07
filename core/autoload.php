@@ -85,3 +85,10 @@ $core = filter_directory($core_path);
 foreach ($core as $file) {
     require_once($core_path . DIRECTORY_SEPARATOR . $file);
 }
+
+// Get and load all helper files 
+$helpers_path = config('helpers_path');
+$helpers = filter_directory($helpers_path);
+foreach ($helpers as $helper) {
+    require_once($helpers_path . DIRECTORY_SEPARATOR . $helper);
+}

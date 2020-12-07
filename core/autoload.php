@@ -36,3 +36,18 @@ function init_config(): array
 
     return $config;
 }
+
+/**
+ * Function to scan and clean directories
+ * from ./ and ../  
+ *
+ * @param string $directory
+ * @return array
+ */
+function filter_directory($directory = '')
+{
+    $files = scandir($directory);
+    unset($files[0]);
+    unset($files[1]);
+    return $files;
+}

@@ -47,8 +47,11 @@ function init_config(): array
 function filter_directory($directory = '')
 {
     $files = scandir($directory);
+    
     unset($files[0]);
+    
     unset($files[1]);
+    
     return $files;
 }
 
@@ -92,4 +95,11 @@ $helpers_path = core_config('helpers_path');
 $helpers = filter_directory($helpers_path);
 foreach ($helpers as $helper) {
     require_once($helpers_path . DIRECTORY_SEPARATOR . $helper);
+}
+
+// Get and load all config files 
+$config_path = core_config('config_path');
+$configs = filter_directory($config_path);
+foreach ($configs as $config) {
+    require_once($config_path . DIRECTORY_SEPARATOR . $config);
 }

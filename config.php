@@ -15,6 +15,7 @@ $config = [
     "layouts_path" => $rootpath . "views/layouts",
     "pages_path" => $rootpath . "views/pages",
     "partials_path" => $rootpath . "views/partials",
+    "config_path" => $rootpath . "config",
     "helpers_path" => $rootpath . "helpers",
     "core_path" =>  $rootpath . "core",
     "storage_path" => $rootpath . "storage",

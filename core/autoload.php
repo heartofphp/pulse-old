@@ -53,13 +53,14 @@ function filter_directory($directory = '')
 }
 
 /**
- * Config function to get config values
- *
+ * Core_config function to get config values 
+ * for doing core functionalities
+ * 
  * @param [type] $key
  * @param [type] $config
  * @return void
  */
-function config($key = null)
+function core_config($key = null)
 {
     $object = '';
     
@@ -80,14 +81,14 @@ function config($key = null)
 }
 
 // Get and load all available core files
-$core_path = config('core_path');
+$core_path = core_config('core_path');
 $core = filter_directory($core_path);
 foreach ($core as $file) {
     require_once($core_path . DIRECTORY_SEPARATOR . $file);
 }
 
 // Get and load all helper files 
-$helpers_path = config('helpers_path');
+$helpers_path = core_config('helpers_path');
 $helpers = filter_directory($helpers_path);
 foreach ($helpers as $helper) {
     require_once($helpers_path . DIRECTORY_SEPARATOR . $helper);

@@ -21,6 +21,16 @@ function layout_path(): string
 }
 
 /**
+ * Page Path function
+ *
+ * @return string
+ */
+function page_path(): string
+{
+    return core_config()->pages_path;
+}
+
+/**
  * Default Layout function
  *
  * @return string

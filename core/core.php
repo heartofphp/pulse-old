@@ -20,3 +20,12 @@ function layout_path(): string
     return core_config()->layouts_path;
 }
 
+/**
+ * Default Layout function
+ *
+ * @return string
+ */
+function default_layout(): string
+{
+    return core_config()->default_layut;
+}

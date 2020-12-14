@@ -37,5 +37,5 @@ function page_path(): string
  */
 function default_layout(): string
 {
-    return core_config()->default_layut;
+    return core_config()->default_layout;
 }

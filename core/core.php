@@ -30,6 +30,17 @@ function page_path(): string
     return core_config()->pages_path;
 }
 
+
+/**
+ * Storage path function
+ *
+ * @return string
+ */
+function storage_path(): string
+{
+    return core_config()->storage_path;
+}
+
 /**
  * Default Layout function
  *

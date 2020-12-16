@@ -9,6 +9,15 @@
  * file that was distributed with this source code.
  */
 
+/**
+ * config path function
+ *
+ * @return string
+ */
+function config_path(): string
+{
+    return core_config()->config_path;
+}
 
 /**
  * Layout Path function
@@ -29,7 +38,6 @@ function page_path(): string
 {
     return core_config()->pages_path;
 }
-
 
 /**
  * Storage path function

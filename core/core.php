@@ -20,6 +20,16 @@ function config_path(): string
 }
 
 /**
+ * Helpers path function
+ *
+ * @return string
+ */
+function helpers_path(): string
+{
+    return core_config()->helpers_path;
+}
+
+/**
  * Layout Path function
  *
  * @return string

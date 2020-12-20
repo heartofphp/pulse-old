@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of Pulse.
+ *
+ * (c) Kwame Oteng Appiah-Nti <me@developerkwame.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 // require config file
 require_once __DIR__ . "/../config.php";
 require_once "debug.php";
@@ -13,8 +22,8 @@ require_once "debug.php";
 function objectify(array $array)
 {
     if (is_array($array)) {
-        $array = json_encode($array);
-        return json_decode($array);
+        $array = json_encode($array, JSON_THROW_ON_ERROR);
+        return json_decode($array, null, 512, JSON_THROW_ON_ERROR);
     }
 
     throw new Exception("Parameter must be array", 1);

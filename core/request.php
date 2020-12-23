@@ -12,13 +12,19 @@
 /**
  * Post function
  *
- * @param [type] $key
- * @return void
+ * @param string|null $key
+ * @return string|array
  */
-function post($key)
+function post($key = null)
 {
+
+    if (is_null($key)) {
+        return $_POST;
+    }
+
     if (isset($_POST[$key])) {
         return $_POST[$key];
     }
+
     return false;
 }

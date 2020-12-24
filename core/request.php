@@ -28,3 +28,21 @@ function post($key = null)
 
     return false;
 }
+
+/** 
+ * Get Function
+ * @param string|null $key
+ * @return string|array
+ */
+function get($key = null)
+{
+    if (is_null($key)) {
+        return $_GET;
+    }
+
+    if (isset($_GET[$key])) {
+        return $_GET[$key];
+    }
+
+    return false;
+}

@@ -46,3 +46,30 @@ function get($key = null)
 
     return false;
 }
+
+/**
+ * Request function
+ *
+ * Checks if $_GET OR $_POST
+ * 
+ * @param string|null $key
+ * @return string|array
+ */
+function request($key = null)
+{
+
+    if (is_null($key)) {
+        return $_REQUEST;
+    }
+
+    if (isset($_GET[$key])) {
+
+        return get($key);
+
+    } else if(isset($_POST[$key])) {
+
+        return post($key);
+        
+    }
+    return false;
+}
